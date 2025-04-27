@@ -1,4 +1,4 @@
-# multi-robot-collaboration-using-deep-learning-RoboticsSpring2025ABU
+# Multi Robot Collaboration Using Deep Learning - Robotics Spring 2025 ABU
 Developers: Fadime Yaren Durmuş & Mustafa Kağan Aytaç | Instructor: Asst. Prof. Deniz Gencaga
 
 # 01:
