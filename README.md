@@ -9,17 +9,19 @@ This report describes how multi-robot systems (MRS) can be made more effective w
 
 # 03:
   Robot Grid Environment
+#
     This code implements a simple grid environment for a robot using OpenAI's Gym library.
     The robot can move in a grid, collect tasks, and recharge its energy at charging stations.
     The environment is designed to be used for reinforcement learning tasks.
     The robot starts at the top-left corner of the grid and can move in four directions (up, down, left, right).
     The robot has a limited energy supply and can recharge at designated charging stations.
+#
 In the codes simultanously, grid system and first environment is created, than some this environment is developed with some algortihms: Auction Based Algorithm and Contact Net Protocol.
 And for the same environment, a reinforcement system applied with Q-Learning algorithm. Agent(Thuban) rewarded according to its actions and results(rewards) of each episodes represented with a graph. Also some upper level algorithms are mentioned in the report such as MADDPG (Multi-Agent Deep Deterministic Policy Gradient), QMIX, and MAAC. I said them "upper level" because robot has another feedback mechanism (named critic), it makes robot change its actions according to meaningful self analysis...
 
 # 04:
 In the report, reinforcement learning basic concepts are explained. Also, an example (frozenlake) is given as a code.
-  FrozenLake Game
+# FrozenLake Game
 Here, the agent learns how to reach the goal in a 4x4 FrozenLake 
 map by trial and error. The Q-table stores the expected reward for every 
 state-action pair. During training, we visualize the learning progress using a heatmap. 
