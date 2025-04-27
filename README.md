@@ -8,7 +8,7 @@ Multi-robot systems can perform complex tasks that a single robot cannot perform
 This report describes how multi-robot systems (MRS) can be made more effective with deep learning. MRS enables robots to coordinate towards a common goal. Centralized and distributed architectures are compared, and the effects of deep learning on perception, decision-making, and task sharing are highlighted. Reinforcement learning (RL) and multi-agent learning (MARL) algorithms are also introduced. The report reviews prominent literature and open source tools, with plans to delve into MARL and implement it on a simple scenario next week.
 
 # 03:
-  Robot Grid Environment
+# Robot Grid Environment
 #
     This code implements a simple grid environment for a robot using OpenAI's Gym library.
     The robot can move in a grid, collect tasks, and recharge its energy at charging stations.
