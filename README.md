@@ -9,7 +9,6 @@ This report describes how multi-robot systems (MRS) can be made more effective w
 
 # 03:
 # Robot Grid Environment
-#
     This code implements a simple grid environment for a robot using OpenAI's Gym library.
     The robot can move in a grid, collect tasks, and recharge its energy at charging stations.
     The environment is designed to be used for reinforcement learning tasks.
