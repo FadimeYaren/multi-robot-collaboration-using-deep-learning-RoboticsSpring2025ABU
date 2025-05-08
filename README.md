@@ -15,6 +15,7 @@ This repository contains weekly implementations and reports for the Robotics Spr
 
 # 03:
 **Summary:**  Implemented a grid environment using OpenAI's Gym library. Developed and tested Auction-Based Algorithm, Contact Net Protocol, and Q-Learning. Visualized agent's learning progress and discussed advanced algorithms like MADDPG, QMIX, and MAAC.
+#
 **Details:**  
 # Robot Grid Environment
     This code implements a simple grid environment for a robot using OpenAI's Gym library.
