@@ -3,7 +3,7 @@ Developers: Fadime Yaren Durmuş & Mustafa Kağan Aytaç | Instructor: Asst. Pro
 # Multi Robot Collaboration Using Deep Learning
 This repository contains weekly implementations and reports for the Robotics Spring 2025 course at ABU, focusing on multi-robot systems enhanced by deep learning techniques.
 
-# 01: ##01
+# 01: (./01/)
 **Summary:**  Introduction to multi-robot systems and their advantages over single-robot systems. Discussed swarm intelligence, communication strategies, and distributed optimization techniques like ADMM.
 #
 **Details:**   Multi-robot systems can perform complex tasks that a single robot cannot perform more efficiently and effectively. When equipped with deep learning and communication capabilities, robots can adapt to the environment, learn from experience, and develop collective strategies. These systems can act more flexibly, scalably, and organized with approaches such as swarm intelligence inspired by nature. Robots can share information fully or partially; predetermined strategies can be developed to continue their tasks even in the event of communication interruptions. Task sharing, route planning, and distributed optimization (e.g. ADMM, aggregative optimization) are important issues in this area. In addition, the ability of robots to establish reliable cooperation with humans raises questions about whether principles such as the classic “three laws of robotics” are sufficient today.
