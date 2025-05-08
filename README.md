@@ -26,3 +26,6 @@ map by trial and error. The Q-table stores the expected reward for every
 state-action pair. During training, we visualize the learning progress using a heatmap. 
 After training, the agent successfully navigates the environment using the learned optimal 
 policy.
+
+# 05:
+We implemented Q-Learning in a 4x4 FrozenLake environment. The agent learns to reach the goal by avoiding holes and updating its Q-table with 3000 episodes. The notebook and presentation includes step-by-step Q-value calculations and visualizations. 
