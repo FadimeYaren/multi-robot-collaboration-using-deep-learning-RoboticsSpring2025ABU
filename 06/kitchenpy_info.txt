@@ -1,0 +1,88 @@
+first of all I created the environemt draft in an excel file.
+#
+00kitchen.py : is first grid environment.
+#
+01kithen.py : has some images for the environment.
+
+    B = Bread Station,
+
+    L = Lettuce Station,
+
+    TO = Tomato Station,
+
+    C = Cutting Board,
+
+    P = Pan (Stove),
+
+    M = Meat Station,
+
+    PL = Plate Station,
+
+    T = Tezgah/Table,
+
+    D = Delivery,
+
+    X = Trash,
+
+    . = walking area
+#
+02kitchen.py : we have a robot and we can move ["move_up", "move_down", "move_left", "move_right"] and have some images for those movements.
+#
+03kitchen.py : I added side area to the window for show current information about simulation.
+#
+04kitcehn.py : we want robot to hold item. We show if robots hold any item or not in the right side of the window.
+#
+05kitchen.py : yes robots has a state about if holding an item or not. But in this upgraded code, we determine actions such as taking item,
+    and item states (as a dictionary object)
+    example: agent_item = {"type": "Meat", "state": "Raw"}
+    but we have a problem here, agent can't interact with object because we didn't define interaction with next blocks.
+#
+06kitchen.py : in this code, robot able to interact with environment using "space key". but objects (such as tomato, meat) are not shown in the
+    environment in an appropriate way. We want to make objects shown in the environment. For example, if we put a tomato to the table, we should
+    be able to see tomato there and other robots which we will add in next steps should be able to see objects in the environment.
+#
+07kitchen.py : We can now drop objects on the table and pick them back up, cook meat, and chop tomatoes and lettuce. All of these work, but 
+    we don't understand well enough what the object we put on the table is, so we need to improve the visuals and information.
+#
+08kitchen.py : started to display objects dropped on the table with item-specific PNG images instead of text. Also, all item images were 
+    configured to be loaded dynamically from the img/items/ folder. 
+
+    tomato_raw.png
+    tomato_chopped.png
+    lettuce_raw.png
+    lettuce_chopped.png
+    meat_raw.png
+    meat_cooked.png
+    meat_burned.png (optional)
+    bread_whole.png
+    plate_clean.png
+
+#
+09kitchen.py : In this step, I introduced the feature of combining elements. For example, when a tomato and a plate are interacted with, 
+    we obtain a tomato object placed on the plate. And combined elements cannot be separated as a game rule. Thanks to this feature, we 
+    will be able to combine the necessary ingredients for a hamburger and enable robots to create hamburgers.
+
+    Combinations:
+
+    single combinations
+    Plate + Bread	--> plate_bread.png
+    Plate + Tomato (Chopped) --> plate_tomato.png
+    Plate + Lettuce (Chopped) --> plate_lettuce.png
+    Plate + Meat (Cooked) --> plate_meat.png
+
+    binary combinations
+    Plate + Bread + Tomato	--> plate_bread_tomato.png
+    Plate + Bread + Lettuce	--> plate_bread_lettuce.png
+    Plate + Bread + Meat	-->  plate_bread_meat.png
+    Plate + Tomato + Lettuce --> plate_tomato_lettuce.png
+    Plate + Tomato + Meat	--> plate_tomato_meat.png
+    Plate + Lettuce + Meat	--> plate_lettuce_meat.png
+
+    triple combinations
+    Plate + Bread + Tomato + Lettuce  --> plate_bread_tomato_lettuce.png
+    Plate + Bread + Tomato + Meat  --> plate_bread_tomato_meat.png
+    Plate + Bread + Lettuce + Meat	--> plate_bread_lettuce_meat.png
+    Plate + Tomato + Lettuce + Meat	--> plate_tomato_lettuce_meat.png
+
+    quadruple combination
+    Plate + Bread + Tomato + Lettuce + Meat (Full Burger) --> plate_burger.png
