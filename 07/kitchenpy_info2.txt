@@ -1,0 +1,122 @@
+#
+09kitchen.py : In this step, I introduced the feature of combining elements. For example, when a tomato and a plate are interacted with, 
+    we obtain a tomato object placed on the plate. And combined elements cannot be separated as a game rule. Thanks to this feature, we 
+    will be able to combine the necessary ingredients for a hamburger and enable robots to create hamburgers.
+
+    Combinations:
+
+    single combinations
+    Plate + Bread	--> plate_bread.png
+    Plate + Tomato (Chopped) --> plate_tomato.png
+    Plate + Lettuce (Chopped) --> plate_lettuce.png
+    Plate + Meat (Cooked) --> plate_meat.png
+
+    binary combinations
+    Plate + Bread + Tomato	--> plate_bread_tomato.png
+    Plate + Bread + Lettuce	--> plate_bread_lettuce.png
+    Plate + Bread + Meat	-->  plate_bread_meat.png
+    Plate + Tomato + Lettuce --> plate_tomato_lettuce.png
+    Plate + Tomato + Meat	--> plate_tomato_meat.png
+    Plate + Lettuce + Meat	--> plate_lettuce_meat.png
+
+    triple combinations
+    Plate + Bread + Tomato + Lettuce  --> plate_bread_tomato_lettuce.png
+    Plate + Bread + Tomato + Meat  --> plate_bread_tomato_meat.png
+    Plate + Bread + Lettuce + Meat	--> plate_bread_lettuce_meat.png
+    Plate + Tomato + Lettuce + Meat	--> plate_tomato_lettuce_meat.png
+
+    quadruple combination
+    Plate + Bread + Tomato + Lettuce + Meat (Full Burger) --> plate_burger.png
+
+
+
+#
+#
+10kitchen.py : (FINISHED VERSİON OF MINI KITCHEN GAME) 
+
+In the previous version (09kitchen.py) the game wasn't finished yet. 
+Combination of elements was broken in practice. So, you will be able to make a full burger in version 10. 
+
+The `"Plate"` type was standardized as `"plate_clean"`, and item-carrying structures were clarified. The `combine_plate_contents()`
+function was made more reliable by using `set()` to prevent ordering issues. A new structure called `PLATE_MERGE_RULES` was 
+introduced to define which ingredients can be added to each plate type. A control was added to prevent duplicate ingredients from 
+being added to the same plate. The merging process—when the agent holds a plate and interacts with an ingredient on the ground—was
+made safer using `isinstance` and `can_merge`. When a new plate is created, its updated type is calculated, and its contents are 
+preserved and placed on the ground correctly. To prevent display issues, some `try-except` blocks for image loading were expanded.
+The code was restructured to be more modular and robust. 
+
+The main goal of this version (v10) was to ensure that ingredients are not lost during merging and that items can be combined 
+within plates without errors—this goal was successfully achieved.
+
+
+
+#
+#
+11kitchen.py : (Key Word: LOG) Multi-Agent Logging & Analysis Infrastructure
+
+Purpose: This version lays the groundwork for reinforcement learning experiments by introducing a structured, scalable logging 
+infrastructure for both agents and the environment. These logs are essential for tracking behavior, computing metrics (e.g., reward, 
+cooperation), and supporting episodic training.
+
+Key Developments in Version 11:
+Multi-Agent Architecture:
+Introduced NUM_AGENTS, agent_positions, agent_items, and agent_logs, enabling simulation with any number of agents dynamically.
+
+Agent-Level Logging (agent_logs):
+Each agent’s action (e.g., pickup, drop, chop, cook, discard, merge) is recorded along with position, time (step), and relevant
+metadata. This supports detailed behavior analysis and reward shaping.
+
+Environment-Level Logging (burger_logs):
+Tracks plate creation and combination events in the environment. Each log includes step time, plate location, contents, final type,
+ and the agent(s) who contributed. Ideal for task tracking and cooperation evaluation.
+
+Snapshot System (snapshot_logs):
+Periodically records global environment state: agent positions and what item (if any) they hold. Useful for visualizing learning 
+progress and debugging.
+
+Agent Switching Mechanism:
+Introduced controlled_agent_id to modularize control logic. This simplifies future steps like automated or round-robin agent switching,
+ or full autonomy during training.
+
+Why this version is critical:
+This version transforms the kitchen simulation from a game-like interface into a reinforcement learning-ready environment. Logs 
+provide complete observability over actions, environment changes, and collaboration dynamics. These logs are not only useful for 
+real-time visualization, but also form the backbone of performance metric computation (e.g., total reward, task completion rate, 
+invalid actions).
+
+By enabling detailed tracking and modular agent handling, version 11 sets the foundation for advanced experimentation including:
+
+Multi-agent DQN training
+
+Episodic training loops
+
+Curriculum learning (progressive task complexity)
+
+Reward engineering and failure recovery
+
+
+
+
+
+#
+12kitchen.py :
+
+Purpose: Episode live/replay mode. Replay mode works but there is a misalign with robot number. So, lets make system with multiagent directly.
+
+
+
+#
+#
+13kitchen.py : Live and replay modes are WORKING!!! There is some little missings such as showing aget locations or items agent carry but no problem.
+Let's move on to the DQN.
+
+
+#
+You need to search about it, after this part is not completed yet!!!!!!
+
+14kitchen.py :
+It will be entegrated to the colab, you need to find a way to DQN
+
+kitchen_env.py :  is created to be able to code in the colab for DQN.
+
+MiniKitchenFirstTestTraining.ipynb : this is for DQN in the colab, but need to be develop.

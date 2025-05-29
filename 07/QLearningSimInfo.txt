@@ -1,0 +1,4 @@
+QLearningSimulation.py :
+
+It allows two robots to learn how to prepare burgers by collaborating in a grill kitchen. We can call it a 
+multi-agent reinforcement learning simulation working with Q-learning.
